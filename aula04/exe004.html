@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações básicas</title>
+    <style>
+        body {
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+
+    <pre> <!-- Repare, para que o HTML, por padrão, não condense espaços vazios (tudo na mesma linha) e obedeça ao comando writeline, o script precisa estar entre a tag pre!-->
+        <script>
+            var nome = window.prompt('Qual é o seu nome?')
+            document.writeln(`Olá, ${nome}!Seu nome tem ${nome.length} letras!`)
+            document.writeln('Seu nome, escrito em letras maiúsculas fica ' + nome.toUpperCase() + '!<br>' )
+            document.write(`Em minúsculas, ele é escrito assim: ${nome.toLowerCase()}!`)
+        </script>
+    </pre>
+</body>
+</html>
