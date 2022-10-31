@@ -12,28 +12,53 @@
             font: normal 18pt Arial;
         }
 
-        
+        div {
+            margin: 10px;
+        }
+
+        .p {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1>Iniciando estudos com DOM</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <p class="p">Parágrafo oculto!</p>
     <div id="msg">Clique em mim</div>
-    <div id="msg2"> Eu <strong>insisto</strong>, clique em mim!</div>
+    <div onclick="clicar()" id="msg2"> Clique em mim!</div>
 
     <script>
         var corpo = window.document.body
         var p0 = window.document.getElementsByTagName('p')[0]
         var p1 = document.getElementsByTagName('p')[1]
         var d = window.document.getElementById('msg')
+        var p = window.document.getElementsByTagName('p')[2]
+        d.addEventListener('mouseenter', entrar)
+        d.addEventListener('mouseleave', sair)
+        
         corpo.style.background = 'gray'
         window.document.write('Está escrito assim: ' + p0.innerText)
         document.write('<br>' + p1.innerHTML)
         d.style.background = 'green'
         d.innerText = 'Estou aguardando...'
 
-        window.document.write(`<br> escreva ${document.querySelector('div#msg2').innerHTML}`) //deveria mostrar o <strong>!
+        var d1 = window.document.querySelector('div#msg2')
+
+        function clicar () {
+            d1.innerHTML = 'Você <strong> clicou </strong>!'
+        }
+        function entrar () {
+            d.innerText = 'Você descobriu a mensagem oculta!'
+            p.style.display = 'block'
+        }
+        function sair () {
+            d.innerText = 'Estou aguardando...'
+            p.style.display = 'none'
+        }
+        
+            
         document.querySelector('div#msg2').style.background = 'black'
     </script>
 </body>
