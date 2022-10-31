@@ -16,16 +16,16 @@
 </head>
 <body>
     <h1>Descubra se você é legalmente considerado brasileiro(a)!</h1>
-    Em qual país você nasceu? <br> <input type="text" name="txt" id="itxt">
+    Em qual país você nasceu? <br> <input type="text" name="pais" id="pais">
     <input type="button" value="Verificar" onclick="analisar()">
     <div id="res">
     </div>
 
     <script>
         function analisar() {
-            var resp = document.getElementById('itxt')
+            var pais = document.getElementById('pais')
             
-            if (resp = 'Brasil') {
+            if (pais == 'Brasil') {
                 var nac = 'BR'
                 res.innerHTML = `Você é <strong>${nac}</strong>! <p>Qualquer pessoa nascida em território nacional é reconhecido como um cidadão brasileiro!</p>`
             } else {
