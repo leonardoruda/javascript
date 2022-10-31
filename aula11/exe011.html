@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Descubra se você é legalmente considerado brasileiro(a)!</h1>
+    Em qual país você nasceu? <br> <input type="text" name="txt" id="itxt">
+    <input type="button" value="Verificar" onclick="analisar()">
+    <div id="res">
+    </div>
+
+    <script>
+        function analisar() {
+            var resp = document.getElementById('itxt')
+            var res = document.getElementById('res')
+            if (resp == 'Brasil') {
+                var nac = 'BR'
+                res.innerHTML = `Você é <strong>${nac}</strong>! <p>Qualquer pessoa nascida em território nacional é reconhecido como um cidadão brasileiro!</p>`
+            } else {
+                var nac = 'gringo'
+                res.innerHTML = `Você é <strong>${nac}</strong>! <p>Qualquer pessoa nascida fora do território nacional não é considerada brasileira por origem, mas ainda pode obter a cidadania brasileira por outros meios!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
