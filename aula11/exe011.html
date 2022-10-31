@@ -9,6 +9,9 @@
         body {
             font: normal 15pt Arial;
         }
+        div {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -21,8 +24,8 @@
     <script>
         function analisar() {
             var resp = document.getElementById('itxt')
-            var res = document.getElementById('res')
-            if (resp == 'Brasil') {
+            
+            if (resp = 'Brasil') {
                 var nac = 'BR'
                 res.innerHTML = `Você é <strong>${nac}</strong>! <p>Qualquer pessoa nascida em território nacional é reconhecido como um cidadão brasileiro!</p>`
             } else {
