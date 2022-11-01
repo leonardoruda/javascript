@@ -25,7 +25,7 @@
         function analisar() {
             var pais = document.getElementById('pais')
             
-            if (pais == 'Brasil') {
+            if (pais.value == 'Brasil') {
                 var nac = 'BR'
                 res.innerHTML = `Você é <strong>${nac}</strong>! <p>Qualquer pessoa nascida em território nacional é reconhecido como um cidadão brasileiro!</p>`
             } else {
