@@ -13,8 +13,6 @@ function verificar() {
         var img = document.createElement('img')
         img.setAttribute('id', 'foto')
         img.style.width = 98
-        var pseudoImg = document.createElement('img::after')
-        pseudoImg.style.content = 'TESTE'
         var teste = document.createElement('textarea')
         teste.style.display = 'block'
         teste.style.height = '100px'
