@@ -13,6 +13,18 @@ function verificar() {
         var img = document.createElement('img')
         img.setAttribute('id', 'foto')
         img.style.width = 98
+        var pseudoImg = document.createElement('img::after')
+        pseudoImg.style.content = 'TESTE'
+        var teste = document.createElement('textarea')
+        teste.style.display = 'block'
+        teste.style.height = '100px'
+        teste.style.width = '150px'
+        teste.setAttribute('placeholder', 'O que você achou? Dê a sua opinião!')
+        var button = document.createElement('button')
+        button.setAttribute('type', 'submit')
+        button.innerText = 'Enviar'
+        button.style.display = 'inline-block'
+
         if (fsex[0].checked) {
             genero = "Homem"
             if (idade >=0 && idade < 10) {
@@ -41,6 +53,8 @@ function verificar() {
         res.style.textAlign = 'center'
         res.innerHTML = `Detectamos ${genero} com ${idade} anos!`
         res.appendChild(img)
+        res.appendChild(teste)
+        res.appendChild(button)
     }
    
 } 
