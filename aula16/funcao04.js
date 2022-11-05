@@ -3,8 +3,7 @@ function fatorial(x) {
     console.log(`Calculando o fatorial de ${x}:`)
     for (let c = x; c>1; c--) {
        f *= c
-       console.log(`${x} * ${c}`)
-       
+       console.log(`* ${c}`)
     }
     return f
 }
