@@ -1,34 +1,35 @@
 let form = document.createElement('input')
-form.setAttribute('type', 'text')
-form.setAttribute('oninput', 'output.innerHTML = n')
-let fn = document.getElementsByTagName('input')
-let n = []
+form.setAttribute('type', 'number')
+form.setAttribute('id', 'ifn')
+let fn = document.getElementById('ifn')
+let valores = []
 let p = document.querySelector('div > p')
-p.innerHTML = 'Vamos adicionar números à nossa matriz [3x2]: '
+p.innerHTML = 'Vamos adicionar números ao nosso vetor!'
 let p2 = document.createElement('p')
 p.appendChild(p2)
-
-
+var button = document.createElement('button')
+button.setAttribute('onclick', 'adicionar()')
+button.innerHTML += `Adicionar`
 let res = document.getElementById('res')
 let output = document.createElement('output')
-output.setAttribute('id', 'n')
+output.setAttribute('id', 'rn')
 res.appendChild(output)
 
-function começar () {
-    let button = document.createElement('button')
-    button.setAttribute('onclick', 'adicionar()')
-    button.innerText = 'Adicionar'
-    for (let l = 1; l <= 3; l++) {
-        for (let c = 1; c <=2; c++) {
-            p2.innerHTML += `Digite um número na posição ${l}, ${c}: `
-            p2.appendChild(form)
-            n[l, c] = (Number(fn.value))
-            p2.appendChild(button)
-        }
-        //n.push(5)
-    }
-}
+let c = 1
+p2.innerHTML = `Digite um número na posição ${0}: `
+p2.appendChild(form)
+p2.appendChild(button)
+
 
 function adicionar () {
-
+    p2.innerHTML = `Digite um número na posição ${c}: `
+    p2.appendChild(form)
+    p2.appendChild(button)
+    c++
+    //valores[c] = (Number(ifn.value))
+    valores.push(Number(ifn.value))
+    output.innerHTML = `${valores}`
+    ifn.value = ''
+    ifn.focus()
 }
+
