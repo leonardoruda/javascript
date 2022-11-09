@@ -21,7 +21,12 @@ section {
     color: black;
     margin: auto;
     padding: 20px;
-    height: 300px;
     width: 50vw;
     border-radius: 20px;
+}
+
+div > p {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-top: 10px;
 }
