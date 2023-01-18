@@ -17,7 +17,7 @@ header {
 }
 
 .slider {
-    width: max(100vw, 1000px);
+    width: 100vw;
     height: 75vh;
     overflow: hidden;
 }
