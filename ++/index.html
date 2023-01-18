@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
        .menu {
         display: flex;
         flex-direction: column;
         gap: 5px;
         background-color: white;
         border-radius: 10px;
-        width: 50px; height: 50px;
-        position: fixed;
-        top: 1.8%;
-        left: 90%;
+        width: 50px;
+        
         padding: 3px;
         box-sizing: border-box;
        }
@@ -29,12 +32,14 @@
     </style>
 </head>
 <body>
-    <div class="menu">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
-    <h1 id="titulo">Blog Fake</h1>
+    <header>
+        <h1 id="titulo">Blog Fake</h1>
+        <div class="menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </header>
 
     <fieldset>
         <div>
