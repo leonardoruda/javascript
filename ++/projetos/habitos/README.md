@@ -34,6 +34,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O Habits é um app para ajudar a rastrear e organizar seus hábitos.
 
+- [Visite o projeto online](https://leonardoruda.github.io/projeto-habits)
+
 
 ## 🔖 Layout
 
