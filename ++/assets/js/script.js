@@ -1,9 +1,82 @@
+const body = document.querySelector('*:not(.bgcolor)');
+const input1 = document.querySelector('input[type="radio"]');
+const input2 = document.querySelector('input[type="radio"]:nth-child(2)');
+const input3 = document.querySelector('input[type="radio"]:nth-child(3)');
+let recebeCor;
+
+input1.addEventListener('click', (e) => {
+ recebeCor = input1.value;
+ populateStorage(recebeCor);
+})
+input2.addEventListener('click', (e) => {
+ recebeCor = input2.value;
+ populateStorage(recebeCor);
+})
+input3.addEventListener('click', (e) => {
+ recebeCor = input3.value;
+ populateStorage(recebeCor);
+})
+
+function populateStorage(e) {
+  localStorage.setItem('bgcolor', e);
+
+  setStyle();
+}
+
+function setStyle() {
+const currentColor = localStorage.getItem('bgcolor');
+body.style.backgroundColor = currentColor;
+}
+
+if (!localStorage.getItem('bgcolor')) {
+  populateStorage();
+} else {
+  setStyle();
+}
 
 
 
 
 
-
+/**
+ * let lety;
+function storageAvailable(type) {
+  let storage;
+  try {
+      storage = window[type];
+      const x = '__storage_test__';
+      const y = 'testing again...'
+      storage.setItem(x, y);
+      lety = storage.getItem(x);
+      return lety;
+  }
+  catch (e) {
+      return e instanceof DOMException && (
+          // everything except Firefox
+          e.code === 22 ||
+          // Firefox
+          e.code === 1014 ||
+          // test name field too, because code might not be present
+          // everything except Firefox
+          e.name === 'QuotaExceededError' ||
+          // Firefox
+          e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+          // acknowledge QuotaExceededError only if there's something already stored
+          (storage && storage.length !== 0);
+  }
+}
+let a;
+if (storageAvailable('sessionStorage')) {
+  console.log('Yippee! We can use localStorage awesomeness');
+  a = false;
+  //let b = sessionStorage.getItem('__storage_test__');
+  console.log(lety)
+}
+else {
+  console.error('Too bad, no localStorage for us');
+  a = true;
+}
+ */
 
 
 
@@ -46,13 +119,6 @@ const loader = {
   renderPosts();
   console.error('ERRO DESCONHECIDO')
  */
-
-
-
-
-
-
-
 
 
 

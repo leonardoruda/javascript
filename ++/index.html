@@ -15,7 +15,6 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
-        background-color: white;
         border-radius: 10px;
         width: 50px;
         
@@ -29,24 +28,43 @@
         height: 5px;
         border-radius: 5px;
        }
+
+       .bgcolor {
+        background-color: white;
+        padding: 2px;
+        font-size: 1.2em;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+       }
     </style>
 </head>
 <body>
     <header>
         <h1 id="titulo">Blog Fake</h1>
+        <div class="bgcolor">
+            <span>Escolha a cor de fundo!</span>
+            <form action="populateStorage()">
+                1<input type="radio" name="cor" id="1" value="#994040c4">
+                2<input type="radio" name="cor" id="2" value="#592466cf">
+                3<input type="radio" name="cor" id="3" value="#46975f">
+            </form>
+        </div>
+        
         <div class="menu">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
         </div>
     </header>
-
     <fieldset>
         <div>
             <input class="titleField" placeholder="Título do post" id="a">
         </div>
         <div>
             <textarea class="bodyField" style="resize: none; width: 300px; height: 100px; margin-top: 5px;"></textarea>
+            <input type="file" name="file" id="ifile">
         </div>
         <div>
             <hr>
@@ -60,6 +78,7 @@
     
     <br>
     <hr>
+    <img src="" alt="">
     <script src="assets/js/script.js"></script>
 </body>
 </html>
