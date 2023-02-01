@@ -185,3 +185,26 @@ li {
     list-style: none;
 }
 
+@media (max-width: 880px) {
+    .urna {
+        flex-direction: column;
+    }
+    .teclado {
+        margin: 0;
+        width: 100%;
+    }
+}
+@media (max-width: 400px) {
+    .urna, .tela, .teclado {
+        max-width: 390px;
+        min-width: 350px;
+        padding: 5px;
+        padding-left: 5px;
+    }
+    .lista {
+        width: fit-content;
+    }
+    .lista ol {
+        padding-left: 0;
+    }
+}
