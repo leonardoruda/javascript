@@ -1,0 +1,35 @@
+{{>partials/header}}
+
+{{#showWelcome}}
+    Opa, tudo bem {{name}}? Você tem {{age}} anos!
+{{/showWelcome}}
+<br>
+{{#oldEnough}}
+    Dirija com cuidado!
+{{/oldEnough}}
+{{^oldEnough}}
+    Você não ainda pode dirigir!
+{{/oldEnough}}
+<p>Lorem ipsum dolor init amet anun non vi si pensa quanto sangue costa!</p>
+
+<h2>Produtos</h2>
+<ul>
+    {{#products}}
+        <li>{{title}} - R$ {{price}}</li>
+    {{/products}}
+</ul>
+<h3>Produtos a partir de R$ 50,00 reais</h3>
+<ul>
+    {{#expensives}}
+        <li>{{title}} - R$ {{price}}</li>
+    {{/expensives}}
+</ul>
+
+<h2>Frases do dia: </h2>
+<ul>
+    {{#frases}}
+        <li>{{.}}</li>
+    {{/frases}}
+</ul>
+
+{{>partials/footer}}

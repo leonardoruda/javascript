@@ -6,7 +6,7 @@ router.get('/', (req: Request, res: Response) => {
     res.send('Home do Painel')
 });
 
-router.get('/contato', (req: Request, res: Response) => {
+router.get('/noticias', (req: Request, res: Response) => {
     res.send('Lista de notícias cadastradas: ')
 });
 

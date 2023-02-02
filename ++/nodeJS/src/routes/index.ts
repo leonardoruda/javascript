@@ -1,17 +1,20 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import {home} from '../controllers/homeController';
+import * as infoController from '../controllers/infoController';
+import * as userController from '../controllers/userController';
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-    res.send('Olá, Mundo!')
-});
+router.get('/', home);
 
-router.get('/contato', (req: Request, res: Response) => {
-    res.send('Formulário de Contato: ')
-});
+router.get('/contato', infoController.contato);
 
-router.get('/sobre', (req: Request, res: Response) => {
-    res.send('Página institucional sobre a empresa...')
-})
+router.get('/sobre', infoController.sobre);
+
+router.get('/nome', userController.nome);
+
+router.get('/idade', userController.idadeGet);
+
+router.post('/idade-resultado', userController.idadePost);
 
 export default router;
