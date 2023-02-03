@@ -1,5 +1,5 @@
 # PetDevShop
-Projeto feito no módulo do curso Node + Typescript pela b7web
+Projeto com Node + Typescript feito no curso de NodeJS pela b7web
 
 ### Pré-requisitos globais:
 `npm i -g nodemon typescript ts-node`
