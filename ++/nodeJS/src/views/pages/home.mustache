@@ -1,31 +1,63 @@
 {{>partials/header}}
 <section>
+    <div class="shorts">
+        <div class="shorts-item">
+            <fieldset>
+                <legend>Cadastrar Novo Usuário</legend>
+                <form method="POST" action="/novousuario" autocomplete="off">
+                    <input type="text" name="name" placeholder="Digite um nome" minlength="4" required/> <br><br>
+                    <input type="text" name="age" placeholder="Digite uma idade" maxlength="3"/> <br><br>
+                    <input type="submit" value="Inserir Usuário">
+                </form>
+            </fieldset>
+        </div>
+        <div class="shorts-item">
+            {{#showWelcome}}
+                <h2>Seja bem-vindo(a)!</h2>
+                Opa, tudo bem {{name}}? {{#age}}Você tem {{age}} anos!{{/age}}
+            {{/showWelcome}}
+            <br>
+            {{#oldEnough}}
+                Dirija com cuidado!
+            {{/oldEnough}}
+            {{#age}}
+            {{^oldEnough}}
+                Você não ainda pode dirigir!
+            {{/oldEnough}}
+            {{/age}}
+        </div>
+    </div>
+
+    <h2>Usuários do banco</h2>
+    <ul>
+    {{#users}}
+        <li style="list-style: square">{{username}} - Idade: {{age}}</li>
+    {{/users}}
+    </ul>
+
+
     
-    {{#showWelcome}}
-        Opa, tudo bem {{name}}? Você tem {{age}} anos!
-    {{/showWelcome}}
-    <br>
-    {{#oldEnough}}
-        Dirija com cuidado!
-    {{/oldEnough}}
-    {{^oldEnough}}
-        Você não ainda pode dirigir!
-    {{/oldEnough}}
-    <p>Lorem ipsum dolor init amet anun non vi si pensa quanto sangue costa!</p>
-    
+    <br/>
     <h2>Produtos</h2>
-    <ul>
-        {{#products}}
-            <li>{{title}} - R$ {{price}}</li>
-        {{/products}}
-    </ul>
-    <h3>Produtos a partir de R$ 50,00 reais</h3>
-    <ul>
-        {{#expensives}}
-            <li>{{title}} - R$ {{price}}</li>
-        {{/expensives}}
-    </ul>
-    
+    <div class="products">
+        <div class="products-item">
+            <h3>Produtos em Destaque</h3>
+            <ul>
+                {{#products}}
+                    <li>{{title}} - R$ {{price}}</li>
+                {{/products}}
+            </ul>
+        </div>
+        <div class="products-item">
+            <h3>Produtos a partir de R$ 50,00 reais</h3>
+            <ul>
+                {{#expensives}}
+                    <li>{{title}} - R$ {{price}}</li>
+                {{/expensives}}
+            </ul>
+        </div>
+    </div>
+
     <h2>Frases do dia: </h2>
     <ul>
         {{#frases}}
