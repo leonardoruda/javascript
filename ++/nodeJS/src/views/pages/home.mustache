@@ -29,11 +29,16 @@
     </div>
 
     <h2>Usuários do banco</h2>
-    <ul>
-    {{#users}}
-        <li style="list-style: square">{{username}} - Idade: {{age}}</li>
-    {{/users}}
-    </ul>
+    <div class="db">
+        <table>
+            {{#users}}
+                <tr>
+                    <td>{{username}} - Idade: {{age}}</td>
+                    <td><a href="/usuario{{id}}/mais"><button>+</button></a><a href="/usuario{{id}}/menos"><button>-</button></a><a href="/usuario{{id}}/excluir"><button>Excluir</button></a></td>
+                </tr>
+            {{/users}}
+        </table>
+    </div>
 
 
     
@@ -58,12 +63,14 @@
         </div>
     </div>
 
-    <h2>Frases do dia: </h2>
-    <ul>
-        {{#frases}}
-            <li>{{.}}</li>
-        {{/frases}}
-    </ul>
+    <div class="frases">
+        <h2>Frases do dia: </h2>
+        <ul>
+            {{#frases}}
+                <li>{{.}}</li>
+            {{/frases}}
+        </ul>
+    </div>
 </section>
 
 {{>partials/footer}}

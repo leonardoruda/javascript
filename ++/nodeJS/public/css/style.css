@@ -17,6 +17,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px 0px 10px 0px;
+    font-size: 13pt;
 }
 
 section {
@@ -25,8 +26,13 @@ section {
     justify-content: space-between;
     align-content: space-between;
 }
-h2 {
+
+h2, h3 {
     text-align: center;
+}
+
+[placeholder]::placeholder {
+    background-color: rgba(211, 209, 207, 0.815);
 }
 
 .shorts {
@@ -47,6 +53,20 @@ h2 {
     height: 142px;
 }
 
+.db {
+    display: table-row;
+    column-count: 3;
+}
+.db table {
+    display: flex;
+    min-width: 300px;
+}
+.db table tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .products {
     display: flex;
     flex-direction: row;
@@ -54,23 +74,30 @@ h2 {
     align-items: center;
 }
 .products-item {
-    padding: 0px 10px;
-    width: 400px;
+    padding: 0px 0px;
+    min-width: 500px;
 }
 .products-item ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     list-style-type: disc;
+    columns: 2;
+}
+
+.frases {
+    text-align: center;
+}
+.frases ul {
+    list-style: none;
+    font-size: 16pt;
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color: rgba(165, 42, 42, 0.781);
     margin: 0px 0px 0px -5px;
     padding: 5px 10px 10px 10px;
     text-align: center;
 }
 
-[placeholder]::placeholder {
-    background-color: rgba(211, 209, 207, 0.815);
-}

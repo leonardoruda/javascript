@@ -3,8 +3,11 @@ import { Op } from 'sequelize';
 import { User } from '../models/User';
 import { Product } from '../models/Product';
 
-export const home = async (req: Request, res: Response) => {
-        
+export const home = async (req: Request, res: Response) => {    
+    
+    
+
+    
     let users = await User.findAll({
         order: [['username', 'ASC']]
     });
@@ -16,6 +19,7 @@ export const home = async (req: Request, res: Response) => {
     }
     let list = Product.getAll();
     let expensiveList = Product.getFromPriceAfter(50);
+
     res.render('pages/home', {
         name: 'Leonardo',
         showWelcome: true,
@@ -25,7 +29,8 @@ export const home = async (req: Request, res: Response) => {
         expensives: expensiveList,
         frases: [
             'A mão suada é suave, a mão seca é severa',
-            'Non vi si pensa quanto sangue costa!'
+            'Non vi si pensa quanto sangue costa!',
+            'Fortis Fortuna Adiuvat'
         ], users
     });
 }
