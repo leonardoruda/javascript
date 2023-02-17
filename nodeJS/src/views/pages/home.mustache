@@ -1,0 +1,29 @@
+{{>partials/header}}
+
+<section>
+    <div class="shorts">
+        <div class="shorts-item">
+            <fieldset>
+                <legend>Cadastrar Novo Usuário</legend>
+                <form method="POST" action="/novousuario" autocomplete="off">
+                    <input type="text" name="name" placeholder="Digite um nome" minlength="4" required/> <br><br>
+                    <input type="text" name="age" placeholder="Digite uma idade" maxlength="3"/> <br><br>
+                    <input type="submit" value="Inserir Usuário">
+                </form>
+            </fieldset>
+        </div>
+    </div>
+    
+    <h2>Usuários Cadastrados: </h2>
+    <div class="db">
+        <table>
+        {{#users}}
+            <tr>
+                <td>{{name}} - Idade: {{age}}</td>
+                <td><a href="/usuario{{id}}/mais"><button>+</button></a><a href="/usuario{{id}}/menos"><button>-</button></a><a href="/usuario{{id}}/excluir"><button>Excluir</button></a></td>
+            </tr>
+        {{/users}}
+        </table>
+        {{>partials/footer}}
+    </div>
+</section>
