@@ -1,28 +1,27 @@
-import { Model, DataTypes } from 'sequelize';
-import { sequelize } from '../instances/postgres';
+import { Schema, model, Model, connection} from 'mongoose';
 
-interface UserInstance extends Model {id: number, username: string, age: number};
-
-export const User = sequelize.define<UserInstance>('User', {
-    id: {
-        primaryKey: true,
-        autoIncrement: true,
-        type: DataTypes.INTEGER
-    },
+type UserType = {
+    email: string,
+    age: number,
+    interests: [string],
     name: {
-        type: DataTypes.STRING,
-        get(){
-            return this.getDataValue('name').replace(' ', '_').toLowerCase();
-        }
-    },
-    age: {
-        type: DataTypes.INTEGER,
-        defaultValue: 18,
-        set(value: number) {
-            if (value < 18) {
-                value = 18
-            };
-            this.setDataValue('age', value);
-        },
-    }    
-}, {tableName: 'users', timestamps: false})
+        firstName: string,
+        lastName: string
+    }
+}
+
+const schema = new Schema<UserType>({
+    email: {type: String, required: true},
+    age: {type: Number, required: true},
+    interests: [String],
+    name: {
+        firstName: {type: String, required: true},
+        lastName: String
+    }
+})
+
+const modelName: string = 'User';
+
+export default (connection && connection.models[modelName]) ?
+    connection.models[modelName] as Model<UserType> :
+    model<UserType>(modelName, schema);

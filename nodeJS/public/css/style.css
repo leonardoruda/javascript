@@ -36,21 +36,12 @@ h2, h3 {
 }
 
 .shorts {
-    display: grid;
-    grid-template-areas: 
-    "item1 item1 item1 item2 item2";
-    gap: 10px 30px;
-    align-items: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.shorts-item:nth-child(1) {
-    grid-area: item1;
-}
-.shorts-item:nth-child(2) {
-    grid-area: item2;
-    box-sizing: border-box;
-    text-align: center;
-    border: 1px solid rgba(54, 53, 53, 0.548);
-    height: 142px;
+.shorts fieldset input, .shorts > input {
+    min-width: 450px;
 }
 
 .db {

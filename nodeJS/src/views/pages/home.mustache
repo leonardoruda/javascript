@@ -1,29 +1,63 @@
 {{>partials/header}}
-
 <section>
     <div class="shorts">
-        <div class="shorts-item">
-            <fieldset>
-                <legend>Cadastrar Novo Usuário</legend>
-                <form method="POST" action="/novousuario" autocomplete="off">
-                    <input type="text" name="name" placeholder="Digite um nome" minlength="4" required/> <br><br>
-                    <input type="text" name="age" placeholder="Digite uma idade" maxlength="3"/> <br><br>
-                    <input type="submit" value="Inserir Usuário">
-                </form>
-            </fieldset>
-        </div>
+        <fieldset>
+            <legend>Cadastrar Novo Usuário</legend>
+            <form method="POST" action="/novousuario" autocomplete="off">
+                <input type="text" name="name" placeholder="Digite seu nome" minlength="4" required/> <br>
+                <input type="text" name="surname" placeholder="Digite seu sobrenome" minlength="4"/> <br>
+                <br>
+                <input type="email" name="email" placeholder="Digite seu email" minlength="4" required/> <br>
+                <input type="text" name="age" placeholder="Digite sua idade" maxlength="3"/> <br><br>
+                <input type="text" name="interests" placeholder="Interesses separados por vírgula, p. ex.: ''ex1,ex2,ex3''"/> <br>
+                <input type="submit" value="Inserir Usuário">
+            </form>
+        </fieldset>
     </div>
-    
-    <h2>Usuários Cadastrados: </h2>
+
+    <h2>Usuários do banco</h2>
     <div class="db">
         <table>
-        {{#users}}
-            <tr>
-                <td>{{name}} - Idade: {{age}}</td>
-                <td><a href="/usuario{{id}}/mais"><button>+</button></a><a href="/usuario{{id}}/menos"><button>-</button></a><a href="/usuario{{id}}/excluir"><button>Excluir</button></a></td>
-            </tr>
-        {{/users}}
+            {{#users}}
+                <tr>
+                    <td>{{name.firstName}} {{name.lastName}} - Idade: {{age}}</td>
+                    <td><a href="/maisano{{id}}"><input type="submit" value="+"></a><a href="/menosano{{id}}"><input type="submit" value="-"></a><a href="/excluir{{id}}"><input type="submit" value="Del"></a></td>
+                </tr>
+            {{/users}}
         </table>
-        {{>partials/footer}}
+    </div>
+
+
+    
+    <br/>
+    <h2>Produtos</h2>
+    <div class="products">
+        <div class="products-item">
+            <h3>Produtos em Destaque</h3>
+            <ul>
+                {{#products}}
+                    <li>{{title}} - R$ {{price}}</li>
+                {{/products}}
+            </ul>
+        </div>
+        <div class="products-item">
+            <h3>Produtos a partir de R$ 50,00 reais</h3>
+            <ul>
+                {{#expensives}}
+                    <li>{{title}} - R$ {{price}}</li>
+                {{/expensives}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="frases">
+        <h2>Frases do dia: </h2>
+        <ul>
+            {{#frases}}
+                <li>{{.}}</li>
+            {{/frases}}
+        </ul>
     </div>
 </section>
+
+{{>partials/footer}}

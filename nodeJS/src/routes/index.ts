@@ -1,12 +1,19 @@
 import { Router } from 'express';
-import { home, newUser, maisAno, menosAno, excluir } from '../controllers/home';
+import {home} from '../controllers/homeController';
+import * as UserController from '../controllers/userController';
+import * as infoController from '../controllers/infoController';
 
 const router = Router();
 
 router.get('/', home);
-router.post('/novousuario', newUser);
-router.get('/usuario:id/mais', maisAno);
-router.get('/usuario:id/menos', menosAno);
-router.get('/usuario:id/excluir', excluir);
+router.post('/novousuario', UserController.addUser);
+
+router.get('/maisano:id', UserController.maisAno);
+router.get('/menosano:id', UserController.menosAno);
+router.get('/excluir:id', UserController.excluir);
+
+router.get('/contato', infoController.contato);
+
+router.get('/sobre', infoController.sobre);
 
 export default router;
