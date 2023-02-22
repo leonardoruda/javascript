@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 import { Op } from 'sequelize';
 import User from '../models/User';
-import { Product } from '../models/Product';
+import Products, { Product } from '../models/Product';
 
 export const home = async (req: Request, res: Response) => {    
     await User.updateMany(
@@ -11,11 +11,7 @@ export const home = async (req: Request, res: Response) => {
     await User.updateOne(
         {'name.firstName': 'André'},
         { age: 17}
-    );
-    
-    
-    
-    
+    );    
     
     let users = await User.find({}).sort({'name.firstName': 1});
     

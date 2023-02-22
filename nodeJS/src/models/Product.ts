@@ -1,7 +1,14 @@
+import { Schema, model, Model, connection} from 'mongoose';
+
 type Product = {
     title: string,
     price: number
 };
+
+const schema = new Schema<Product>({
+    title: String,
+    price: Number
+})
 
 const data: Product[] = [
     {title: 'Produto X', price: 10.00},
@@ -14,6 +21,8 @@ const data: Product[] = [
     {title: 'Produto mais vendido', price: 1.99}
 ]
 
+const modelName: string = 'Products';
+
 export const Product = {
     getAll: (): Product[] => data,
     getFromPriceAfter: (price: number): Product[] => {
@@ -21,3 +30,7 @@ export const Product = {
     },
     getByName: (title: string): Product[] => data.filter(item => item.title == title)
 };
+
+export default (connection && connection.models[modelName]) ?
+    connection.models[modelName] as Model<Product> :
+    model<Product>(modelName, schema);
