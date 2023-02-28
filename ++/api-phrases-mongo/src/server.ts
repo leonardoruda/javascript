@@ -2,11 +2,11 @@ import express, {Request, Response} from 'express';
 import path from 'path';
 import Routes from './routes/api-routes';
 import cors from 'cors';
-//import {mongoConnect} from './database/mongo';
+import {mongoConnect} from './database/mongo';
 require('dotenv').config();
 
 const server = express();
-//mongoConnect();
+mongoConnect();
 server.use(cors({origin: '*'}));
 
 server.use(express.static(path.join(__dirname, '../public')));
