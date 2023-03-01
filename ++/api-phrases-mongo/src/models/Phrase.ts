@@ -14,3 +14,13 @@ const schema = new Schema<PhraseType>({
 const modelName: string= 'Phrase';
 
 export default (connection && connection.models[modelName])? connection.models[modelName] as Model<PhraseType>: model<PhraseType>(modelName, schema) ;
+
+/**
+const mongoose = require("mongoose");
+const UserSchema = new mongoose.Schema({
+name: String,
+age: Number,
+});
+const User = mongoose.model("User", UserSchema);
+module.exports = User;
+ */
