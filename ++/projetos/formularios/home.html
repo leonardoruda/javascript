@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    <script>
+    let h1 = document.createElement('h1');
+    let params = window.location.search;
+    console.log(params)
+    let nameBeggin = params.indexOf('=');
+    console.log(nameBeggin)
+    let nameEnd = params.indexOf('&');
+    console.log(nameEnd)
+    let nome = params.slice(nameBeggin+1, nameEnd);
+    console.log(nome);
+
+    h1.innerHTML = `Olá ${nome}! <br>
+    Servidor temporariamente indisponível <br>
+    Tente novamente mais tarde`
+    document.body.append(h1);
+
+    </script>
+</body>
+</html>
