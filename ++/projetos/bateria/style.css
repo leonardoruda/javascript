@@ -42,11 +42,16 @@ h1 {
     height: 100px;
     font-size: 2em;
     font-weight: bold;
-
+    cursor: pointer;
+}
+.tecla:active {
+    color: rgb(190, 15, 190);
+    border: 2px solid rgb(114, 16, 180);
+    transition: all ease .2s;
 }
 .tecla.click {
-    color: rgb(209, 209, 14);
-    border: 2px solid rgba(180, 180, 16, 0.89);
+    color: rgb(190, 15, 190);
+    border: 2px solid rgb(114, 16, 180);
     transition: all ease .1s;
 }
 

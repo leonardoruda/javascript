@@ -1,9 +1,17 @@
+let key = document.querySelectorAll('.tecla');
+key.forEach((k) => {
+    k.addEventListener('click', () => {
+        let dataKey = k.getAttribute('data-key');
+        playSound(dataKey);
+    });
+});
+
 document.body.addEventListener('keyup', (event) => {
     playSound(event.code.toLowerCase());
 });
 
 document.querySelector('button#ex').addEventListener('click', (event) => {
-    document.querySelector('#ipartitura').value = 'aaw aaw sw xqz zew zewaa dssdw zzcw xqc xqc dcc';
+    document.querySelector('#ipartitura').value = 'e e e e aaw aaw sw xqc xqc zew zewaa xqazzaw dssdw adcc';
 });
 
 document.querySelector('button#play').addEventListener('click', (event) => {
