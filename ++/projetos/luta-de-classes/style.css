@@ -45,7 +45,15 @@ strong {
 }
 
 .log {
+    padding: 3px;
+    list-style-type: none;
     border: 1px dotted #999;
-    height: 200px;
+    height: 600px;
     overflow-y: scroll;
+    line-height: 2;
+
+    /* overflow-anchor: none; */
 }
+/* .log li {
+    overflow-anchor: auto;
+} */

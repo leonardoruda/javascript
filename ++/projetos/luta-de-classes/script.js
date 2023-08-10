@@ -1,5 +1,6 @@
 const qs = (e) => document.querySelector(e);
 
+let log = new Log(qs('.log'));
 let hero1 = new Knight('Karmaan');
 let hero2 = new Sorcerer('Mordekaiser');
 
@@ -12,7 +13,8 @@ const stage = new Stage(
     qs('#char2'),
     monster1, monster2,
     qs('#monster1'),
-    qs('#monster2')
+    qs('#monster2'),
+    log
 )
 
 stage.start();
