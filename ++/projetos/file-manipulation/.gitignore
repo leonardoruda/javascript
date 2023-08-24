@@ -1,3 +1,7 @@
 node_modules
 package-lock.json
 tmp/*
+!c9d2e7074735d4872c931585e3d54cc2
+public/media/*.jpg
+!c9d2e7074735d4872c931585e3d54cc2.jpg
+
